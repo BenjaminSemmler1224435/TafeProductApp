@@ -38,6 +38,8 @@ namespace ProductApps
                 totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25); //Ddd delivery charge ($25) and output to the new text block
 
                 totalChargeWrapTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25 + 5); //Add delivery ($25) and wrap ($5) charges and output to the new text block
+
+                totalChargeGSTTextBlock.Text = Convert.ToString(Convert.ToDouble(cProduct.TotalPayment + 25 + 5) * 1.1); //Add delivery ($25), wrap ($5) and GST (10%) charges and output to the new text block
             }
             catch (FormatException)
             {
@@ -55,6 +57,7 @@ namespace ProductApps
             //Clear the new Text Blocks
             totalChargeTextBlock.Text = "";
             totalChargeWrapTextBlock.Text = "";
+            totalChargeGSTTextBlock.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
