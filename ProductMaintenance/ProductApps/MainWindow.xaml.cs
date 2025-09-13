@@ -35,7 +35,9 @@ namespace ProductApps
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 
-                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25); //New line to add delivery charge ($25) and output to the new text block
+                totalChargeTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25); //Ddd delivery charge ($25) and output to the new text block
+
+                totalChargeWrapTextBlock.Text = Convert.ToString(cProduct.TotalPayment + 25 + 5); //Add delivery ($25) and wrap ($5) charges and output to the new text block
             }
             catch (FormatException)
             {
@@ -50,7 +52,9 @@ namespace ProductApps
             quantityTextBox.Text = "";
             totalPaymentTextBlock.Text = "";
 
-            totalChargeTextBlock.Text = ""; //Clear the new text block
+            //Clear the new Text Blocks
+            totalChargeTextBlock.Text = "";
+            totalChargeWrapTextBlock.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
